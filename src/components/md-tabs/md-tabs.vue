@@ -6,7 +6,7 @@
 			<div class="tabsBar-container">
 
 				<div class="tabs-selections" ref="tabSelectors">
-					<div class="tabs-tab" v-for="tab,position in tabs" :class="{ 'foreground--primaryLight': tab.isActive, 'foreground--primaryAlternateDark': !tab.isActive }" @click="selectTab(position)">
+					<div class="tabs-tab" v-for="tab,position in tabs" :class="{ 'foreground--primaryAlternate': tab.isActive, 'foreground--primaryLight': !tab.isActive }" @click="selectTab(position)">
 						{{ tab.name }}
 					</div>
 				</div>
@@ -32,7 +32,7 @@ export default {
 		return {
 			tabs: [],
 			currentTab: 0,
-			positionClass: 'tabsBar--fill'
+			positionClass: ''
 		};
 	},
 	created() {
