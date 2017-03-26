@@ -76,6 +76,9 @@ body {
 #app {
 	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-smoothing: antialiased;
+
+	margin: 0 auto;
+	width: 720px;
 }
 
 /* Raise */
