@@ -78,6 +78,14 @@ body {
 	font-smoothing: antialiased;
 }
 
+/* Colors */
+
+.foreground--light { color: #ffffff; }
+.foreground--dark { color: #000000; }
+
+.background--light { background-color: #ffffff; }
+.background--dark { background-color: #000000; }
+
 /*
  * Primary
  * Blue 500 100 700
@@ -93,42 +101,40 @@ body {
 
 /*
  * Primary Alternate
- * Grey 500
- * Blue     600 200
+ * White Black White
  */
 
 .foreground--primaryAlternate { color: #FFFFFF; }
-.foreground--primaryAlternateLight { color: #1E88E5; }
-.foreground--primaryAlternateDark { color: #BBDEFB; }
+.foreground--primaryAlternateLight { color: #000000; }
+.foreground--primaryAlternateDark { color: #FFFFFF; }
 
 .background--primaryAlternate { background-color: #FFFFFF; }
-.background--primaryAlternateLight { background-color: #1E88E5; }
-.background--primaryAlternateDark { background-color: #BBDEFB; }
+.background--primaryAlternateLight { background-color: #000000; }
+.background--primaryAlternateDark { background-color: #FFFFFF; }
 
 /*
  * Secondary
- * Yellow 500 100 700;
+ * Red 500 100 700;
  */
 
-.foreground--secondary { color: #FFEB3B; }
-.foreground--secondaryLight { color: #FFF8E1; }
-.foreground--secondaryDark { color: #FFA000; }
+.foreground--secondary { color: #F44336; }
+.foreground--secondaryLight { color: #FFCDD2; }
+.foreground--secondaryDark { color: #D32F2F; }
 
-.background--secondary { background-color: #FFEB3B; }
-.background--secondaryLight { background-color: #FFF8E1; }
-.background--secondaryDark { background-color: #FFA000; }
+.background--secondary { background-color: #F44336; }
+.background--secondaryLight { background-color: #FFCDD2; }
+.background--secondaryDark { background-color: #D32F2F; }
 
 /*
  * Secondary Alternate
- * Grey 500
- * Yellow   600 200
+ * White Black White
  */
 
 .foreground--secondaryAlternate { color: #FFFFFF; }
-.foreground--secondaryAlternateLight { color: #FDD835; }
-.foreground--secondaryAlternateDark { color: #FFF59D; }
+.foreground--secondaryAlternateLight { color: #000000; }
+.foreground--secondaryAlternateDark { color: #FFFFFF; }
 
 .background--secondaryAlternate { background-color: #FFFFFF; }
-.background--secondaryAlternateLight { background-color: #FDD835; }
-.background--secondaryAlternateDark { background-color: #FFF59D; }
+.background--secondaryAlternateLight { background-color: #000000; }
+.background--secondaryAlternateDark { background-color: #FFFFFF; }
 </style>
