@@ -1,6 +1,5 @@
 <template>
 	<div class="ripples" ref="ripplesContainer" @mousedown="createRipple" @mouseup="fadeRipples" @mouseleave="fadeRipples">
-		<div class="shit"></div>
 		<div
 			v-for="ripple in ripples"
 			class="ripples-wave"
@@ -31,7 +30,6 @@ export default {
 	methods: {
 		createRipple(e) {
 			let ripplesContainer = this.$refs.ripplesContainer;
-
 
 			let rippleContainerWidth = ripplesContainer.offsetWidth;
 			let rippleContainerHeight = ripplesContainer.offsetHeight;
