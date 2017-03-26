@@ -106,7 +106,7 @@ export default {
 
 .ripples-wave.isActive,
 .ripples-wave.isFading {
-	transform: scale(1);
+	transform: scale(2);
 }
 
 .ripples-wave.isFading {
