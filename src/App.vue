@@ -1,6 +1,18 @@
 <template>
 	<div id="app">
 
+		<h1>Buttons</h1>
+
+		<md-button>Default</md-button>
+		<md-button accent="primary">Primary</md-button>
+		<md-button accent="secondary">Secondary</md-button>
+
+		<md-button type="flat">Default</md-button>
+		<md-button type="flat" accent="primary">Primary</md-button>
+		<md-button type="flat" accent="secondary">Secondary</md-button>
+
+		<h1>Tabs</h1>
+
 		<md-tabs :accent="true" position="fill">
 
 			<md-tab name="Tab 1">
@@ -24,16 +36,25 @@
 </template>
 
 <script>
+import mdRipple from './components/md-ripple/md-ripple.vue';
+import mdButton from './components/md-button/md-button.vue';
+
 import mdAlert from './components/md-alert/md-alert.vue';
 import mdCard from './components/md-card/md-card.vue';
+
 import mdTabs from './components/md-tabs/md-tabs.vue';
 import mdTab from './components/md-tabs/md-tab.vue';
 
 export default {
 	name: 'app',
 	components: {
+		'md-ripple': mdRipple,
+
+		'md-button': mdButton,
+
 		'md-alert': mdAlert,
 		'md-card': mdCard,
+
 		'md-tabs': mdTabs,
 		'md-tab': mdTab
 	},
