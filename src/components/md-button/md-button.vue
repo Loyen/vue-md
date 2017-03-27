@@ -64,5 +64,13 @@ export default {
 	border-radius: 0.2em;
 
 	overflow: auto;
+
+	/*
+	 * Setting z-index fixes an issue where md-ripple
+	 * goes outside of border-radius til' it has finished
+	 * its transition, then it pops in with correct
+	 * overflow values.
+	 */
+	z-index: 0;
 }
 </style>
