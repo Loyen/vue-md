@@ -24,11 +24,16 @@ export default {
 	},
 	data() {
 		return {
-			ripples: []
+			ripples: [],
+			fadeTimeout: null
 		};
 	},
 	methods: {
 		createRipple(e) {
+			if (this.fadeTimeout) {
+				clearTimeout(this.fadeTimeout);
+			}
+
 			let ripplesContainer = this.$refs.ripplesContainer;
 
 			let rippleContainerWidth = ripplesContainer.offsetWidth;
@@ -66,12 +71,15 @@ export default {
 			});
 
 			let self = this;
-			setTimeout(_ => {
+			this.fadeTimeout = setTimeout(_ => {
+				let lastPos = 0;
 				self.ripples.forEach((ripple, pos) => {
 					if (!ripple.active)
-						self.ripples.splice(pos, 1);
+						lastPos = pos;
 				});
-			}, 500);
+
+				self.ripples.splice(0, lastPos+1);
+			}, 400);
 		}
 	}
 }
