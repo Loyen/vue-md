@@ -96,6 +96,16 @@ export default {
 	height: 100%;
 
 	overflow: hidden;
+	border-radius: inherit;
+
+	/*
+	 * will-change: transform; triggers a
+	 * compositing layer which fixes a bug
+	 * that allows ripples to show up outside
+	 * of border-radius til' it has finished
+	 * its transition.
+	 */
+	will-change: transform;
 }
 
 .ripples-wave {
