@@ -39,9 +39,6 @@
 import mdRipple from './components/md-ripple/md-ripple.vue';
 import mdButton from './components/md-button/md-button.vue';
 
-import mdAlert from './components/md-alert/md-alert.vue';
-import mdCard from './components/md-card/md-card.vue';
-
 import mdTabs from './components/md-tabs/md-tabs.vue';
 import mdTab from './components/md-tabs/md-tab.vue';
 
@@ -51,9 +48,6 @@ export default {
 		'md-ripple': mdRipple,
 
 		'md-button': mdButton,
-
-		'md-alert': mdAlert,
-		'md-card': mdCard,
 
 		'md-tabs': mdTabs,
 		'md-tab': mdTab
