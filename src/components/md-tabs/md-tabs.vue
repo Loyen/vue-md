@@ -116,7 +116,10 @@ export default {
 	flex: 1;
 
 	text-align: center;
-	line-height: 2em;
+	line-height: 3em;
+
+	padding-left: 0.125em;
+	padding-right: 0.125em;
 
 	transition-property: color;
 	transition-duration: 0.1s;
@@ -141,7 +144,7 @@ export default {
 
 
 .tabs-indicator {
-	height: 0.2em;
+	height: 0.125em;
 
 	position: absolute;
 
