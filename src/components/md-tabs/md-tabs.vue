@@ -106,7 +106,7 @@ export default {
 
 
 <style>
-.tabsBar {
+.tabsBar-container {
 	position: relative;
 }
 
