@@ -147,6 +147,8 @@ export default {
 
 	position: absolute;
 
+	pointer-events: none;
+
 	bottom: 0;
 
 	width: 0;
