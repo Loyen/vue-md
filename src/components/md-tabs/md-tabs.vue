@@ -1,12 +1,12 @@
 <template>
 	<div class="tabs">
 
-		<div class="tabsBar" :class="positionClass">
+		<div class="tabsBar" :class="[ positionClass, barClass ]">
 
 			<div class="tabsBar-container">
 
 				<div class="tabs-selections" ref="tabSelectors">
-					<div class="tabs-tab" v-for="tab,position in tabs" :class="tabClass" @click="selectTab(position)">
+					<div class="tabs-tab" v-for="tab,position in tabs" @click="selectTab(position)">
 						{{ tab.name }}
 						<md-ripple :accent="rippleAccent" />
 					</div>
@@ -40,7 +40,7 @@ export default {
 			tabs: [],
 			currentTab: 0,
 			positionClass: '',
-			tabClass: '',
+			barClass: '',
 			indicatorClass: '',
 			rippleAccent: ''
 		};
@@ -52,8 +52,8 @@ export default {
 	},
 	methods: {
 		setAccent() {
-			this.tabClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate'];
-			this.indicatorClass = [ 'background--'+this.accentIndicator, 'foreground--'+this.accentIndicator+'Alternate'];
+			this.barClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate'];
+			this.indicatorClass = [ 'background--'+this.accentIndicator ];
 
 			let rippleAccent = this.accent;
 
