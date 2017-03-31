@@ -106,29 +106,6 @@ export default {
 	position: relative;
 }
 
-.tabsBar--left .tabsBar-container,
-.tabsBar--center .tabsBar-container,
-.tabsBar--right .tabsBar-container {
-	width: 33.333333%;
-}
-
-.tabsBar--fixed .tabs-selections {
-	display: flex;
-}
-
-.tabsBar--fixed .tabs-tab {
-	flex: 1;
-}
-
-.tabsBar--center .tabsBar-container {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.tabsBar--right .tabsBar-container {
-	margin-left: auto;
-}
-
 .tabs-tab {
 	position: relative;
 	cursor: pointer;
@@ -140,6 +117,30 @@ export default {
 	transition-duration: 0.1s;
 	transition-timing-function: linear;
 }
+
+.tabsBar--fixed .tabs-selections {
+	display: flex;
+}
+
+.tabsBar--fixed .tabs-tab {
+	flex: 1;
+}
+
+.tabsBar--left .tabsBar-container,
+.tabsBar--center .tabsBar-container,
+.tabsBar--right .tabsBar-container {
+	width: 33.333333%;
+}
+
+.tabsBar--center .tabsBar-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tabsBar--right .tabsBar-container {
+	margin-left: auto;
+}
+
 
 .tabs-indicator {
 	height: 0.2em;
