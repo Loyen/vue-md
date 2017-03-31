@@ -19,6 +19,8 @@ export default {
 	},
 	mounted() {
 		this.isActive = this.selected;
+
+		this.$parent.setTab(this);
 	}
 }
 </script>

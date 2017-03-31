@@ -35,10 +35,6 @@ export default {
 			positionClass: ''
 		};
 	},
-	created() {
-		this.tabs = this.$children;
-
-	},
 	mounted() {
 		this.positionClass = 'tabsBar--'+this.position;
 
@@ -50,6 +46,10 @@ export default {
 		this.setActive();
 	},
 	methods: {
+		setTab(tab) {
+			this.tabs.push(tab);
+		},
+
 		selectTab(position) {
 			this.currentTab = position;
 			this.setActive();
