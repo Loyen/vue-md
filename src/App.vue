@@ -51,11 +51,6 @@ export default {
 
 		'md-tabs': mdTabs,
 		'md-tab': mdTab
-	},
-	data () {
-		return {
-			msg: 'Welcome to Your Vue.js App'
-		}
 	}
 }
 </script>
