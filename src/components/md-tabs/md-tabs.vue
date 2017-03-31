@@ -32,7 +32,6 @@ export default {
 	},
 	props: {
 		accent: { default: 'default', required: false },
-		accentIndicator:  { default: 'dark', required: false },
 		position: { default: 'fill' }
 	},
 	data() {
@@ -53,16 +52,13 @@ export default {
 	methods: {
 		setAccent() {
 			this.barClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate'];
-			this.indicatorClass = [ 'background--'+this.accentIndicator ];
+			this.indicatorClass = [ 'background--'+this.accent ];
 
-			let rippleAccent = this.accent;
-
-			if (this.accent == 'default')
-				rippleAccent = 'dark';
-			else
-				rippleAccent += 'Alternate';
+			let rippleAccent = this.accent == 'default' ? 'dark' : this.accent+'Alternate';
+			let indicatorAccent = this.accent+'Alternate';
 
 			this.rippleAccent = rippleAccent;
+			this.indicatorClass = [ 'background--'+indicatorAccent ];
 		},
 
 		initTabs() {

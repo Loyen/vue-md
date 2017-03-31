@@ -28,20 +28,13 @@ export default {
 	},
 	methods: {
 		setAccent() {
-			let rippleAccent = this.accent;
-			if (this.accent == 'default')
-				rippleAccent = 'dark';
+			let rippleAccent = this.accent == 'default' ? 'dark' : (this.type != 'flat' ? this.accent+'Alternate' : this.accent);
+			this.rippleAccent = rippleAccent;
 
-			if (this.type != 'flat') {
-				if (this.accent != 'default')
-					rippleAccent += 'Alternate';
-
+			if (this.type != 'flat')
 				this.typeClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate', 'raise--1'];
-				this.rippleAccent = rippleAccent;
-			} else {
+			else
 				this.typeClass = [ 'foreground--'+this.accent ];
-				this.rippleAccent = rippleAccent;
-			}
 		},
 
 		triggerClick(e) {
