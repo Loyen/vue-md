@@ -28,11 +28,10 @@ export default {
 	},
 	methods: {
 		setAccent() {
-			let rippleAccent = this.accent == 'default' ? 'dark' : (this.type != 'flat' ? this.accent+'Alternate' : this.accent);
-			this.rippleAccent = rippleAccent;
+			this.rippleAccent = this.accent == 'default' ? 'dark' : (this.type != 'flat' ? this.accent+'Alternate' : this.accent);
 
 			if (this.type != 'flat')
-				this.typeClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate', 'raise--1'];
+				this.typeClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate', 'raise--1' ];
 			else
 				this.typeClass = [ 'foreground--'+this.accent ];
 		},
