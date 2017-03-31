@@ -1,17 +1,18 @@
 <template>
 	<div class="tabs">
 
-		<div class="tabsBar background--primary" :class="positionClass">
+		<div class="tabsBar" :class="positionClass">
 
 			<div class="tabsBar-container">
 
 				<div class="tabs-selections" ref="tabSelectors">
-					<div class="tabs-tab" v-for="tab,position in tabs" :class="{ 'foreground--primaryAlternate': tab.isActive, 'foreground--primaryLight': !tab.isActive }" @click="selectTab(position)">
+					<div class="tabs-tab" v-for="tab,position in tabs" :class="tabClass" @click="selectTab(position)">
 						{{ tab.name }}
+						<md-ripple :accent="rippleAccent" />
 					</div>
 				</div>
 
-				<div class="tabs-indicator" :class="{ 'background--secondary': this.accent, 'background--primaryAlternate': !this.accent }" ref="tabIndicator"></div>
+				<div class="tabs-indicator" :class="indicatorClass" ref="tabIndicator"></div>
 
 			</div>
 
@@ -23,29 +24,58 @@
 </template>
 
 <script>
+import mdRipple from '../md-ripple/md-ripple.vue';
+
 export default {
+	components: {
+		'md-ripple': mdRipple
+	},
 	props: {
-		accent: { default: true, required: false },
+		accent: { default: 'default', required: false },
+		accentIndicator:  { default: 'dark', required: false },
 		position: { default: 'fill' }
 	},
 	data() {
 		return {
 			tabs: [],
 			currentTab: 0,
-			positionClass: ''
+			positionClass: '',
+			tabClass: '',
+			indicatorClass: '',
+			rippleAccent: ''
 		};
 	},
 	mounted() {
-		this.positionClass = 'tabsBar--'+this.position;
+		this.setAccent();
 
-		this.tabs.forEach((tab,position) => {
-			if (tab.isActive)
-				this.currentTab = position;
-		});
-
-		this.setActive();
+		this.initTabs();
 	},
 	methods: {
+		setAccent() {
+			this.tabClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate'];
+			this.indicatorClass = [ 'background--'+this.accentIndicator, 'foreground--'+this.accentIndicator+'Alternate'];
+
+			let rippleAccent = this.accent;
+
+			if (this.accent == 'default')
+				rippleAccent = 'dark';
+			else
+				rippleAccent += 'Alternate';
+
+			this.rippleAccent = rippleAccent;
+		},
+
+		initTabs() {
+			this.positionClass = 'tabsBar--'+this.position;
+
+			this.tabs.forEach((tab,position) => {
+				if (tab.isActive)
+					this.currentTab = position;
+			});
+
+			this.setActive();
+		},
+
 		setTab(tab) {
 			this.tabs.push(tab);
 		},
@@ -100,6 +130,7 @@ export default {
 }
 
 .tabs-tab {
+	position: relative;
 	cursor: pointer;
 
 	flex: 1;
