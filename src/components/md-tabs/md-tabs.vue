@@ -32,7 +32,7 @@ export default {
 	},
 	props: {
 		accent: { default: 'default', required: false },
-		position: { default: 'fill' }
+		position: { default: 'fixed' }
 	},
 	data() {
 		return {
@@ -112,6 +112,14 @@ export default {
 	width: 33.333333%;
 }
 
+.tabsBar--fixed .tabs-selections {
+	display: flex;
+}
+
+.tabsBar--fixed .tabs-tab {
+	flex: 1;
+}
+
 .tabsBar--center .tabsBar-container {
 	margin-left: auto;
 	margin-right: auto;
@@ -121,15 +129,10 @@ export default {
 	margin-left: auto;
 }
 
-.tabs-selections {
-	display: flex;
-}
-
 .tabs-tab {
 	position: relative;
 	cursor: pointer;
 
-	flex: 1;
 	text-align: center;
 	line-height: 2em;
 

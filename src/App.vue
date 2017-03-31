@@ -13,7 +13,7 @@
 
 		<h1>Tabs</h1>
 
-		<md-tabs accent="primary" position="fill">
+		<md-tabs accent="primary" position="fixed">
 
 			<md-tab name="Tab 1">
 				<h1>Tab 1</h1>
