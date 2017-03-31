@@ -1,6 +1,6 @@
 <template>
 	<div class="button" :class="typeClass" @click="triggerClick">
-		<md-ripple :accent="rippleAccent"></md-ripple>
+		<md-ripple :accent="rippleAccent" />
 		<slot></slot>
 	</div>
 </template>
