@@ -1,5 +1,5 @@
 <template>
-	<div class="ripples" ref="ripplesContainer" @mousedown="createRipple" @mouseup="fadeRipples" @mouseleave="fadeRipples">
+	<div class="ripples" ref="ripplesContainer" v-if="!disabled" @mousedown="createRipple" @mouseup="fadeRipples" @mouseleave="fadeRipples">
 		<div
 			v-for="ripple in ripples"
 			class="ripples-wave"
@@ -20,7 +20,8 @@
 <script>
 export default {
 	props: {
-		accent: { default: 'default' }
+		accent: { default: 'default' },
+		disabled: { default: false }
 	},
 	data() {
 		return {
