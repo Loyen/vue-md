@@ -32,6 +32,7 @@ export default {
 	},
 	props: {
 		accent: { default: 'default', required: false },
+		type: { default:'default' },
 		position: { default: 'fixed' }
 	},
 	data() {
@@ -51,14 +52,15 @@ export default {
 	},
 	methods: {
 		setAccent() {
-			this.barClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate'];
-			this.indicatorClass = [ 'background--'+this.accent ];
+			this.rippleAccent = this.accent == 'default' ? 'dark' : (this.type != 'flat' ? this.accent+'Alternate' : this.accent);
 
-			let rippleAccent = this.accent == 'default' ? 'dark' : this.accent+'Alternate';
-			let indicatorAccent = this.accent+'Alternate';
-
-			this.rippleAccent = rippleAccent;
-			this.indicatorClass = [ 'background--'+indicatorAccent ];
+			if (this.type != 'flat') {
+				this.barClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate' ];
+				this.indicatorClass = [ 'background--'+this.accent+'Alternate' ];
+			} else {
+				this.barClass = [ 'foreground--'+this.accent ];
+				this.indicatorClass = [ 'background--'+this.accent ];
+			}
 		},
 
 		initTabs() {
