@@ -106,9 +106,14 @@ export default {
 	position: relative;
 }
 
+.tabs-selections {
+	display: flex;
+}
+
 .tabs-tab {
 	position: relative;
 	cursor: pointer;
+	flex: 1;
 
 	text-align: center;
 	line-height: 2em;
@@ -118,13 +123,6 @@ export default {
 	transition-timing-function: linear;
 }
 
-.tabsBar--fixed .tabs-selections {
-	display: flex;
-}
-
-.tabsBar--fixed .tabs-tab {
-	flex: 1;
-}
 
 .tabsBar--left .tabsBar-container,
 .tabsBar--center .tabsBar-container,
