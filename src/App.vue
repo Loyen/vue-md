@@ -91,6 +91,8 @@ export default {
 
 			if (!hasNotifications)
 				this.triggerNotification();
+			else
+				this.closeNotification();
 		},
 
 		triggerNotification() {
