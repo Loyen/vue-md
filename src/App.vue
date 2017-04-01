@@ -64,7 +64,6 @@
 </template>
 
 <script>
-import mdRipple from './components/md-ripple/md-ripple.vue';
 import mdIcon from './components/md-icon/md-icon.vue';
 
 import mdButton from './components/md-button/md-button.vue';
@@ -77,8 +76,6 @@ import mdSnackbar from './components/md-snackbar/md-snackbar.vue';
 export default {
 	name: 'app',
 	components: {
-		'md-ripple': mdRipple,
-
 		'md-icon': mdIcon,
 		'md-button': mdButton,
 
