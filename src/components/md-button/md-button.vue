@@ -61,5 +61,7 @@ export default {
 	overflow: auto;
 
 	vertical-align: middle;
+
+	user-select: none;
 }
 </style>

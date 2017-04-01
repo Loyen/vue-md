@@ -104,6 +104,10 @@ export default {
 
 
 <style>
+.tabsBar {
+	user-select: none;
+}
+
 .tabsBar-container {
 	position: relative;
 }
