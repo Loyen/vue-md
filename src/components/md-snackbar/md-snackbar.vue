@@ -47,7 +47,7 @@ export default {
 	width: 100%;
 
 	left: 0;
-	bottom: -5em;
+	bottom: -10em;
 
 	transform: bottom;
 	transition-duration: 0.4s;
@@ -72,11 +72,13 @@ export default {
 }
 
 .snackbar-message {
-	flex: 8;
+	flex: 10;
 }
 
 .snackbar-action {
 	flex: 1;
+	text-align: right;
+	white-space: nowrap;
 }
 
 .snackbar--left .snackbar-container {
