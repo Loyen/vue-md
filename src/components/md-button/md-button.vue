@@ -28,12 +28,15 @@ export default {
 	},
 	methods: {
 		setAccent() {
-			this.rippleAccent = this.accent == 'default' ? 'dark' : (this.type != 'flat' ? this.accent+'Alternate' : this.accent);
+			this.rippleAccent = this.accent == 'default' ? 'dark' : (this.type == 'default' ? this.accent+'Alternate' : this.accent);
 
-			if (this.type != 'flat')
+			if (this.type == 'default')
 				this.typeClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate', 'raise--1' ];
 			else
 				this.typeClass = [ 'foreground--'+this.accent ];
+
+			if (this.type == 'inline')
+				this.typeClass.push('isInline');
 		},
 
 		triggerClick(e) {
@@ -59,5 +62,9 @@ export default {
 	border-radius: 0.2em;
 
 	overflow: auto;
+}
+
+.button.isInline {
+	display: inline;
 }
 </style>
