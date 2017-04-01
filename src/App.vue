@@ -42,12 +42,16 @@ import mdButton from './components/md-button/md-button.vue';
 import mdTabs from './components/md-tabs/md-tabs.vue';
 import mdTab from './components/md-tabs/md-tab.vue';
 
+import mdToast from './components/md-toast/md-toast.vue';
+
 export default {
 	name: 'app',
 	components: {
 		'md-ripple': mdRipple,
 
 		'md-button': mdButton,
+
+		'md-toast': mdToast,
 
 		'md-tabs': mdTabs,
 		'md-tab': mdTab
