@@ -33,18 +33,27 @@
 		</md-tabs>
 
 		<md-button @clicked="sendNotification({
-				message: 'Hello there! I will just stretch here for a while before moving on!',
+				position: 'left',
+				message: 'Hello from the left.',
 				action: 'Close',
 				trigger: closeNotification
-			})">Trigger toast</md-button>
+			})">Trigger left snackbar</md-button>
 
 		<md-button @clicked="sendNotification({
-				message: 'I wont go away until you specifically tell me to.',
+				position: 'center',
+				message: 'Hello from the center.',
 				action: 'Close',
 				trigger: closeNotification
-			})">Trigger snackbar</md-button>
+			})">Trigger center snackbar</md-button>
 
-		<md-toast v-if="notification" :message="notification.message" :action="notification.action" :trigger="notification.trigger" :active="notification.active" />
+		<md-button @clicked="sendNotification({
+				position: 'right',
+				message: 'Hello from the right.',
+				action: 'Close',
+				trigger: closeNotification
+			})">Trigger right snackbar</md-button>
+
+		<md-snackbar v-if="notification" :position="notification.position" :message="notification.message" :action="notification.action" :trigger="notification.trigger" :active="notification.active" />
 
 	</div>
 </template>
@@ -56,7 +65,7 @@ import mdButton from './components/md-button/md-button.vue';
 import mdTabs from './components/md-tabs/md-tabs.vue';
 import mdTab from './components/md-tabs/md-tab.vue';
 
-import mdToast from './components/md-toast/md-toast.vue';
+import mdSnackbar from './components/md-snackbar/md-snackbar.vue';
 
 export default {
 	name: 'app',
@@ -65,7 +74,7 @@ export default {
 
 		'md-button': mdButton,
 
-		'md-toast': mdToast,
+		'md-snackbar': mdSnackbar,
 
 		'md-tabs': mdTabs,
 		'md-tab': mdTab

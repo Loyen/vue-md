@@ -1,13 +1,13 @@
 <template>
-	<div class="toast" :class="{ isActive: active }">
+	<div class="snackbar" :class="[ { isActive: active }, 'snackbar--'+position ]">
 
-		<div class="toast-container background--dark foreground--primaryLight">
+		<div class="snackbar-container background--dark foreground--primaryLight">
 
-			<div class="toast-message">
+			<div class="snackbar-message">
 				{{ message }}
 			</div>
 
-			<div class="toast-action">
+			<div class="snackbar-action">
 				<md-button type="inline" accent="secondary" @clicked="triggerClick">{{ action }}</md-button>
 			</div>
 
@@ -27,7 +27,8 @@ export default {
 		message: { required: true },
 		active: { required: true },
 		action: { required: false },
-		trigger: { required: false }
+		trigger: { required: false },
+		position: { default: 'center' }
 	},
 	methods: {
 		triggerClick() {
@@ -40,7 +41,7 @@ export default {
 
 <style>
 
-.toast {
+.snackbar {
 	position: fixed;
 
 	width: 100%;
@@ -53,11 +54,11 @@ export default {
 	transition-property: bottom;
 }
 
-.toast.isActive {
+.snackbar.isActive {
 	bottom: 1em;
 }
 
-.toast-container {
+.snackbar-container {
 	display: flex;
 	border-radius: 0.2em;
 
@@ -68,30 +69,35 @@ export default {
 
 	min-width: 288px;
 	max-width: 568px;
-
-	margin-left: auto;
-	margin-right: auto;
 }
 
-
-.toast-message {
+.snackbar-message {
 	flex: 8;
 }
 
-.toast-action {
+.snackbar-action {
 	flex: 1;
 }
 
-.toast--snackbar.isActive {
-	bottom: 0;
+.snackbar--left .snackbar-container {
+	margin-left: 1em;
 }
 
-.toast--snackbar .toast-container {
-	border-radius: 0;
+.snackbar--center .snackbar-container {
+	margin-left: auto;
+	margin-right: auto;
 
-	min-width: initial;
-	max-width: initial;
-	width: 100%;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.snackbar--right .snackbar-container {
+	margin-left: auto;
+	margin-right: 1em;
+}
+
+.snackbar.isActive.snackbar--center {
+	bottom: 0;
 }
 
 </style>
