@@ -1,5 +1,5 @@
 <template>
-	<div class="toast" :class="{ isActive: active, 'toast--snackbar': persistent }">
+	<div class="toast" :class="{ isActive: active }">
 
 		<div class="toast-container background--dark foreground--primaryLight">
 
@@ -27,8 +27,7 @@ export default {
 		message: { required: true },
 		active: { required: true },
 		action: { required: false },
-		trigger: { required: false },
-		persistent: { default: false }
+		trigger: { required: false }
 	},
 	methods: {
 		triggerClick() {

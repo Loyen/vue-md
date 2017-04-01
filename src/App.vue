@@ -35,18 +35,16 @@
 		<md-button @clicked="sendNotification({
 				message: 'Hello there! I will just stretch here for a while before moving on!',
 				action: 'Close',
-				trigger: closeNotification,
-				persistent: false
+				trigger: closeNotification
 			})">Trigger toast</md-button>
 
 		<md-button @clicked="sendNotification({
 				message: 'I wont go away until you specifically tell me to.',
 				action: 'Close',
-				trigger: closeNotification,
-				persistent: true
+				trigger: closeNotification
 			})">Trigger snackbar</md-button>
 
-		<md-toast v-if="notification" :message="notification.message" :action="notification.action" :trigger="notification.trigger" :persistent="notification.persistent" :active="notification.active" />
+		<md-toast v-if="notification" :message="notification.message" :action="notification.action" :trigger="notification.trigger" :active="notification.active" />
 
 	</div>
 </template>
@@ -126,9 +124,7 @@ export default {
 
 			clearInterval(this.notification_timer);
 
-			if (!this.notification.persistent)
-				this.notification_timer = setTimeout(this.closeNotification, 5000);
-
+			this.notification_timer = setTimeout(this.closeNotification, 5000);
 		}
 	}
 }
