@@ -34,9 +34,6 @@ export default {
 				this.typeClass = [ 'background--'+this.accent, 'foreground--'+this.accent+'Alternate', 'raise--1' ];
 			else
 				this.typeClass = [ 'foreground--'+this.accent ];
-
-			if (this.type == 'inline')
-				this.typeClass.push('isInline');
 		},
 
 		triggerClick(e) {
@@ -62,9 +59,5 @@ export default {
 	border-radius: 0.2em;
 
 	overflow: auto;
-}
-
-.button.isInline {
-	display: inline;
 }
 </style>

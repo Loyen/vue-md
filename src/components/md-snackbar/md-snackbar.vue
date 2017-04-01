@@ -8,7 +8,7 @@
 			</div>
 
 			<div class="snackbar-action">
-				<md-button type="inline" accent="secondary" @clicked="triggerClick">{{ action }}</md-button>
+				<md-button type="flat" accent="secondary" @clicked="triggerClick">{{ action }}</md-button>
 			</div>
 
 		</div>
