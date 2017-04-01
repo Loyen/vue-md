@@ -4,7 +4,7 @@
 		<div class="snackbar-container background--dark foreground--primaryLight">
 
 			<div class="snackbar-message">
-				{{ message }}
+				<p>{{ message }}</p>
 			</div>
 
 			<div class="snackbar-action">

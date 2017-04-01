@@ -146,6 +146,10 @@ body {
 	line-height: 1.5em;
 }
 
+p {
+	line-height: 1.5em;
+}
+
 #app {
 	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-smoothing: antialiased;
