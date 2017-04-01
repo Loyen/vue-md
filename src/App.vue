@@ -32,6 +32,8 @@
 
 		</md-tabs>
 
+		<h1>Snackbars</h1>
+
 		<md-button @clicked="sendNotification({
 				position: 'left',
 				message: 'Hello from the left.',
