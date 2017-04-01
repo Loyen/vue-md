@@ -11,6 +11,9 @@
 		<md-button type="flat" accent="primary">Primary</md-button>
 		<md-button type="flat" accent="secondary">Secondary</md-button>
 
+
+		<md-button><md-icon name="priority_high" /></md-button>
+
 		<h1>Tabs</h1>
 
 		<md-tabs accent="primary" position="fixed">
@@ -62,6 +65,8 @@
 
 <script>
 import mdRipple from './components/md-ripple/md-ripple.vue';
+import mdIcon from './components/md-icon/md-icon.vue';
+
 import mdButton from './components/md-button/md-button.vue';
 
 import mdTabs from './components/md-tabs/md-tabs.vue';
@@ -74,6 +79,7 @@ export default {
 	components: {
 		'md-ripple': mdRipple,
 
+		'md-icon': mdIcon,
 		'md-button': mdButton,
 
 		'md-snackbar': mdSnackbar,
