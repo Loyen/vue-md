@@ -1,7 +1,7 @@
 <template>
 	<div class="snackbar" :class="[ { isActive: active }, 'snackbar--'+position ]">
 
-		<div class="snackbar-container background--dark foreground--primaryLight">
+		<div class="snackbar-container background--dark foreground--light">
 
 			<div class="snackbar-message">
 				<p>{{ message }}</p>

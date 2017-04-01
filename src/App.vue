@@ -189,10 +189,10 @@ p {
 /* Colors */
 
 .foreground--light { color: #ffffff; }
-.foreground--dark { color: #000000; }
+.foreground--dark { color: #323232; }
 
 .background--light { background-color: #ffffff; }
-.background--dark { background-color: #000000; }
+.background--dark { background-color: #323232; }
 
 /*
  * Primary
