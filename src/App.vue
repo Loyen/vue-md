@@ -32,6 +32,22 @@
 
 		</md-tabs>
 
+		<md-button @clicked="sendNotification({
+				message: 'Hello there! I will just stretch here for a while before moving on!',
+				action: 'Close',
+				trigger: closeNotification,
+				persistent: false
+			})">Trigger toast</md-button>
+
+		<md-button @clicked="sendNotification({
+				message: 'I wont go away until you specifically tell me to.',
+				action: 'Close',
+				trigger: closeNotification,
+				persistent: true
+			})">Trigger snackbar</md-button>
+
+		<md-toast v-if="notification" :message="notification.message" :action="notification.action" :trigger="notification.trigger" :persistent="notification.persistent" :active="notification.active" />
+
 	</div>
 </template>
 
@@ -55,6 +71,63 @@ export default {
 
 		'md-tabs': mdTabs,
 		'md-tab': mdTab
+	},
+	data () {
+		return {
+
+			notification_queue: [],
+			notification: null,
+			notification_timer: null
+
+		}
+	},
+	methods: {
+		sendNotification(notification) {
+			let hasNotifications = this.notification_queue.length !== 0;
+
+			notification.active = false;
+
+			this.notification_queue.push(notification);
+
+			if (!hasNotifications)
+				this.triggerNotification();
+		},
+
+		triggerNotification() {
+			if (this.notification_queue.length === 0) return;
+
+			this.notification = this.notification_queue[0];
+
+			clearInterval(this.notification_timer);
+			this.notification_timer = setTimeout(this.delayedCloseNotification, 1);
+		},
+
+		closeNotification() {
+
+			this.notification.active = false;
+
+			let self = this;
+
+			clearInterval(this.notification_timer);
+			this.notification_timer = setTimeout(_ => {
+				self.notification_queue.shift();
+				self.notification = null;
+
+				if (self.notification_queue !== 0)
+					self.triggerNotification();
+
+			}, 400);
+		},
+
+		delayedCloseNotification() {
+			this.notification.active = true;
+
+			clearInterval(this.notification_timer);
+
+			if (!this.notification.persistent)
+				this.notification_timer = setTimeout(this.closeNotification, 5000);
+
+		}
 	}
 }
 </script>
