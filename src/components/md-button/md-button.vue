@@ -54,7 +54,7 @@ export default {
 
 	position: relative;
 
-	line-height: 1.5em;
+	line-height: 2em;
 
 	padding-left: 0.5em;
 	padding-right: 0.5em;
