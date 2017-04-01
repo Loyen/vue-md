@@ -59,5 +59,7 @@ export default {
 	border-radius: 0.2em;
 
 	overflow: auto;
+
+	vertical-align: middle;
 }
 </style>
