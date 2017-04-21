@@ -60,6 +60,10 @@
 
 		<md-snackbar v-if="notification" :position="notification.position" :message="notification.message" :action="notification.action" :trigger="notification.trigger" :active="notification.active" />
 
+		<h1>Input</h1>
+
+		<md-textfield label="Textfield"></md-textfield>
+		<md-textfield label="Textarea" multiline="true" description="This is a multiline textfield"></md-textfield>
 	</div>
 </template>
 
@@ -71,6 +75,8 @@ import mdButton from './components/md-button/md-button.vue';
 import mdTabs from './components/md-tabs/md-tabs.vue';
 import mdTab from './components/md-tabs/md-tab.vue';
 
+import mdTextfield from './components/md-textfield/md-textfield.vue';
+
 import mdSnackbar from './components/md-snackbar/md-snackbar.vue';
 
 export default {
@@ -80,6 +86,8 @@ export default {
 		'md-button': mdButton,
 
 		'md-snackbar': mdSnackbar,
+
+		'md-textfield': mdTextfield,
 
 		'md-tabs': mdTabs,
 		'md-tab': mdTab
