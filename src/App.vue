@@ -218,6 +218,9 @@ p {
 .background--light { background-color: #ffffff; }
 .background--dark { background-color: #323232; }
 
+.border--light { border-color: #ffffff; }
+.border--dark { border-color: #323232; }
+
 /*
  * Primary
  * Blue 500 100 700
@@ -230,6 +233,10 @@ p {
 .background--primary { background-color: #2196F3; }
 .background--primaryLight { background-color: #E3F2FD; }
 .background--primaryDark { background-color: #1976D2; }
+
+.border--primary { border-color: #2196F3; }
+.border--primaryLight { border-color: #E3F2FD; }
+.border--primaryDark { border-color: #1976D2; }
 
 /*
  * Primary Alternate
@@ -244,6 +251,10 @@ p {
 .background--primaryAlternateLight { background-color: #000000; }
 .background--primaryAlternateDark { background-color: #FFFFFF; }
 
+.border--primaryAlternate { border-color: #FFFFFF; }
+.border--primaryAlternateLight { border-color: #000000; }
+.border--primaryAlternateDark { border-color: #FFFFFF; }
+
 /*
  * Secondary
  * Red 500 100 700;
@@ -257,6 +268,10 @@ p {
 .background--secondaryLight { background-color: #FFCDD2; }
 .background--secondaryDark { background-color: #D32F2F; }
 
+.border--secondary { border-color: #F44336; }
+.border--secondaryLight { border-color: #FFCDD2; }
+.border--secondaryDark { border-color: #D32F2F; }
+
 /*
  * Secondary Alternate
  * White Black White
@@ -269,4 +284,8 @@ p {
 .background--secondaryAlternate { background-color: #FFFFFF; }
 .background--secondaryAlternateLight { background-color: #000000; }
 .background--secondaryAlternateDark { background-color: #FFFFFF; }
+
+.border--secondaryAlternate { border-color: #FFFFFF; }
+.border--secondaryAlternateLight { border-color: #000000; }
+.border--secondaryAlternateDark { border-color: #FFFFFF; }
 </style>
