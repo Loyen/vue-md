@@ -1,8 +1,9 @@
 <template>
 	<div>
-		<div class="textfield foreground--dark border--dark" :class="{ isTouched: focus || hasText() }">
-			<div class="textfield-label">{{ label }}</div>
+		<div class="textfield" :class="{ isTouched: focus || hasText() }">
+			<div class="textfield-label" :class="accentForeground">{{ label }}</div>
 			<textarea :rows="rowCount()" class="textfield-input" v-model="text" @focus="focus = true" @blur="focus = false" @input="cleanText()"></textarea>
+			<div class="textfield-line" :class="accentBackground"></div>
 			<div v-if="description" class="textfield-helper">{{ description }}</div>
 		</div>
 	</div>
@@ -14,16 +15,34 @@ export default {
 		label: { default: '' },
 		description: { description: '' },
 		required: { default: false },
-		multiline: { default: false }
+		multiline: { default: false },
+		accent: { default: 'primary' }
 	},
 	data() {
 		return {
-			text: '',
+			text: 'touched',
 			focus: false,
-			classes: ''
+			accentForeground: '',
+			accentBackground: ''
+		}
+	},
+	mounted() {
+		this.setAccent();
+	},
+	watch: {
+		focus: function() {
+			this.setAccent();
 		}
 	},
 	methods: {
+		setAccent() {
+			let accent = (this.focus ? this.accent : 'default');
+			accent = accent == 'default' ? 'dark' : accent;
+
+			this.accentBackground = [ 'background--'+accent ];
+			this.accentForeground = [ 'foreground--'+accent ];
+		},
+
 		hasText() {
 			return this.text.length > 0;
 		},
@@ -53,16 +72,17 @@ export default {
 	transition-duration: 0.1s;
 	transition-timing-function: linear;
 
-	margin-bottom: 0.4em;
+	padding-top: 1em;
+	padding-bottom: 0.5em;
 }
 
 .textfield-label {
-	margin-top: 0.4em;
-	padding-left: 0.1em;
+	top: 1.5em;
+	padding-left: 0.12em;
 	line-height: inherit;
 
 	position: absolute;
-	transition-property: font-size,margin-top;
+	transition-property: font-size,margin-top,color;
 	transition-duration: inherit;
 	transition-timing-function: inherit;
 
@@ -72,12 +92,11 @@ export default {
 .textfield-input {
 	display: block;
 
+	font-family: inherit;
 	line-height: inherit;
 
 	border: none;
-	border-bottom-width: 0.1em;
-	border-bottom-style: solid;
-	border-bottom-color: inherit;
+
 	resize: none;
 	font-size: 1em;
 	padding-top: 0.5em;
@@ -92,23 +111,29 @@ export default {
 	transition-timing-function: inherit;
 }
 
-.textfield-helper {
-	margin-top: 0.4em;
-	font-size: 0.8em;
+.textfield-line {
+	position: absolute;
+	width: 100%;
+
+	transition-property: height,background-color;
+	transition-duration: inherit;
+	transition-timing-function: inherit;
+	height: 1px;
 }
 
-.textfield.isTouched {
-	padding-top: 1em;
+.textfield.isTouched .textfield-line {
+	height: 2px;
+}
+
+.textfield-helper {
+	margin-top: 0.5em;
+	font-size: 0.8em;
 }
 
 .textfield.isTouched .textfield-label {
 	font-size: 0.8em;
-	margin-top: -1em;
+	margin-top: -1.2em;
 	height: auto;
-}
-
-.textfield.isTouched .textfield-input {
-	border-bottom-width: 0.2em;
 }
 
 </style>
