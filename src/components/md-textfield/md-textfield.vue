@@ -1,13 +1,11 @@
 <template>
-	<div>
-		<div class="textfield" :class="{ isTouched: focus || hasText() }">
-			<div class="textfield-label" :class="accentForeground">{{ label }}</div>
-			<div v-if="focus && !hasText()" class="textfield-placeholder">{{ placeholder }}</div>
-			<textarea v-if="multiline" :rows="rows" class="textfield-input" v-model="text" @focus="focus = true" @blur="focus = false"></textarea>
-			<input type="text" v-if="!multiline" class="textfield-input" v-model="text" @focus="focus = true" @blur="focus = false" />
-			<div class="textfield-line" :class="accentBackground"></div>
-			<div v-if="description" class="textfield-helper">{{ description }}</div>
-		</div>
+	<div class="textfield" :class="{ isTouched: focus || hasText() }">
+		<div class="textfield-label" :class="accentForeground">{{ label }}</div>
+		<div v-if="focus && !hasText()" class="textfield-placeholder">{{ placeholder }}</div>
+		<textarea v-if="multiline" :rows="rows" class="textfield-input" v-model="text" @focus="focus = true" @blur="focus = false"></textarea>
+		<input type="text" v-if="!multiline" class="textfield-input" v-model="text" @focus="focus = true" @blur="focus = false" />
+		<div class="textfield-line" :class="accentBackground"></div>
+		<div v-if="description" class="textfield-helper">{{ description }}</div>
 	</div>
 </template>
 
