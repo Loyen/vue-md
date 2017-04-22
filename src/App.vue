@@ -64,6 +64,7 @@
 
 		<md-textfield label="Textfield"></md-textfield>
 		<md-textfield label="Textarea" multiline="true" description="This is a multiline textfield"></md-textfield>
+		<md-textfield label="Textarea" placeholder="You are supposed to type something here" description="This field has a placeholder text"></md-textfield>
 	</div>
 </template>
 

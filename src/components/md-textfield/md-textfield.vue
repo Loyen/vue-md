@@ -2,7 +2,7 @@
 	<div>
 		<div class="textfield" :class="{ isTouched: focus || hasText() }">
 			<div class="textfield-label" :class="accentForeground">{{ label }}</div>
-			<textarea :rows="rowCount()" class="textfield-input" v-model="text" @focus="focus = true" @blur="focus = false" @input="cleanText()"></textarea>
+			<div v-if="focus && !hasText()" class="textfield-placeholder">{{ placeholder }}</div>
 			<div class="textfield-line" :class="accentBackground"></div>
 			<div v-if="description" class="textfield-helper">{{ description }}</div>
 		</div>
@@ -13,6 +13,7 @@
 export default {
 	props: {
 		label: { default: '' },
+		placeholder: { default: '' },
 		description: { description: '' },
 		required: { default: false },
 		multiline: { default: false },
@@ -76,7 +77,8 @@ export default {
 	padding-bottom: 0.5em;
 }
 
-.textfield-label {
+.textfield-label,
+.textfield-placeholder {
 	top: 1.5em;
 	padding-left: 0.12em;
 	line-height: inherit;
@@ -87,6 +89,10 @@ export default {
 	transition-timing-function: inherit;
 
 	pointer-events: none;
+}
+
+.textfield-placeholder {
+	opacity: 0.2;
 }
 
 .textfield-input {
